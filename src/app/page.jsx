@@ -1,24 +1,31 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-// import Image from "next/image";
+
+
 
 
 const fetchAnime = async () => {
 
-  const data = await fetch( "https://anime-api-liart.vercel.app/top-airing", { method: "POST" } );
+  const topAiring = await fetch( "https://anime-api-liart.vercel.app/top-airing", { method: "POST" } );
+  const recentEpisodes = await fetch( "https://anime-api-liart.vercel.app/recent-episodes", { method: "POST" } );
 
-  return ( await data.json() );
+  return {
+    topAiring: ( await topAiring.json() ),
+    recentEpisodes: ( await recentEpisodes.json() )
+  };
 
 };
 
+
+
 const page = async () => {
 
-  const topAiring = await fetchAnime();
+  const { topAiring } = await fetchAnime();
 
   return (
-    <main className="w-full">
+    <main className="w-full ">
       <div className="flex flex-col md:grid md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 items-stretch md:justify-start">
         {
           topAiring?.results.map( anime => (
@@ -39,9 +46,9 @@ const page = async () => {
               </CardContent> */}
 
               <CardFooter className="absolute bottom-0">
-                <Button>
-                  <Link href={ `/${ anime.id }` }>Go to Page</Link>
-                </Button>
+                {/* <Button> */ }
+                <Link href={ `/${ anime.id }` } className={ buttonVariants( { variant: "default" } ) }>Go to Page</Link>
+                {/* </Button> */ }
               </CardFooter>
             </Card>
           ) )

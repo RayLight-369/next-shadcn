@@ -7,6 +7,13 @@ import Link from 'next/link';
 import React from 'react';
 
 
+export async function generateStaticParams () {
+  const animes = await fetch( 'https://anime-api-liart.vercel.app/top-airing', { method: "POST" } ).then( ( res ) => res.json() );
+
+  return animes.results.map( ( anime ) => ( {
+    id: anime.id
+  } ) );
+}
 
 const fetchAnime = async ( id ) => {
 
@@ -34,7 +41,7 @@ const page = async ( { params } ) => {
 
   return (
     <section className='w-full'>
-      <div className="w-full flex flex-col md:flex-row gap-8">
+      <div className="w-full flex flex-col md:flex-row gap-8 float-left">
         <div className="thumbnail w-full md:w-1/4">
           { animeInfo.image ? (
             <Image src={ animeInfo.image } width={ 700 } height={ 300 } loading='lazy' placeholder='empty' className='object-contain w-full bg-black rounded-3xl' />
@@ -117,6 +124,7 @@ const page = async ( { params } ) => {
           </Tabs>
         </div>
       </div>
+
     </section>
   );
 };
