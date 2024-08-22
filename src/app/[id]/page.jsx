@@ -108,7 +108,7 @@ const page = async ( { params } ) => {
                   animeInfo.episodes.map( ( episode, i ) => (
                     <Link href={ `/${ animeInfo.title }/episodes/${ episode.id }` } className='rounded-md items-center p-3 px-4 bg-muted group flex justify-between text-sm'>
                       Episode { episode.number }
-                      <ChevronRight className='invisible group-hover:visible h-5 aspect-square hover:bg-background rounded-full' />
+                      <ChevronRight className='invisible group-hover:visible h-full p-[2px] aspect-square hover:bg-background rounded-full' />
                     </Link>
                   ) )
                 }
