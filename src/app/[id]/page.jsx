@@ -81,7 +81,7 @@ const page = async ( { params } ) => {
                     variant: "secondary"
                   }
                 ].map( ( info, i ) => (
-                  <div className="type flex gap-5 items-start">
+                  <div className="type flex gap-5 items-start" key={ i }>
                     <Label>{ info.name }: </Label>
                     <div className='flex gap-2 w-full flex-wrap'>
                       <Badge variant={ info.variant }>{ info.value }</Badge>
