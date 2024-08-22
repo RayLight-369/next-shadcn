@@ -19,7 +19,7 @@ export default function RootLayout ( { children } ) {
           defaultTheme="system"
           enableSystem
         >
-          <div className="!min-w-full flex flex-col p-12 md:px-16 items-start justify-start">
+          <div className="!min-w-full flex flex-col p-10 md:px-16 items-start justify-start">
             <nav className="w-full mb-14 flex justify-between items-center">
               <h1 className="font-black text-xl md:text-4xl">Ray's Shadcn Practice</h1>
               <DarkModeToggle />

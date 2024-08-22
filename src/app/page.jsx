@@ -18,10 +18,10 @@ const page = async () => {
 
   return (
     <main className="w-full">
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 justify-center md:justify-start">
+      <div className="flex flex-col md:grid md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 items-stretch md:justify-start">
         {
           topAiring?.results.map( anime => (
-            <Card key={ anime.id } className={ "flex flex-col justify-between" }>
+            <Card key={ anime.id } className={ "relative flex flex-col max-w-full" }>
               <CardHeader>
                 {/* <Image src={ anime.image } width={ 300 } height={ 150 } className="h-[300px] w-auto" /> */ }
                 <div>
@@ -32,11 +32,11 @@ const page = async () => {
                 </div>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="mb-20">
                 <p className="text-sm text-slate-600 dark:text-slate-200">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, impedit laudantium porro quibusdam cumque iure maiores dolore nulla ex ea.</p>
               </CardContent>
 
-              <CardFooter>
+              <CardFooter className="absolute bottom-0">
                 <Button>
                   <Link href={ `/${ anime.id }` }>Go to Page</Link>
                 </Button>
