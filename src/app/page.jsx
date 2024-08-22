@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 import Link from "next/link";
 // import Image from "next/image";
 
@@ -25,7 +26,8 @@ const page = async () => {
               <CardHeader className="mb-20">
                 {/* <Image src={ anime.image } width={ 300 } height={ 150 } className="h-[300px] w-auto" /> */ }
                 <div>
-                  <CardTitle className={ "overflow-hidden whitespace-nowrap text-ellipsis leading-normal" }>{ anime.title }</CardTitle>
+                  <Image width={ 50 } height={ 80 } src={ anime.image } className="float-left mr-4 rounded-md" />
+                  <CardTitle className={ "overflow-hidden whitespace-nowrap text-ellipsis leading-normal text-xl" }>{ anime.title }</CardTitle>
                   <CardDescription>
                     { anime.genres.join( ", " ) }
                   </CardDescription>
