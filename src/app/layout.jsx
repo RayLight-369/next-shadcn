@@ -19,9 +19,9 @@ export default function RootLayout ( { children } ) {
           defaultTheme="system"
           enableSystem
         >
-          <div className="!min-w-full flex flex-col p-12 px-16 items-start justify-start">
-            <nav className="w-full mb-14 flex justify-between">
-              <h1 className="font-black text-4xl">Ray's Shadcn Practice</h1>
+          <div className="!min-w-full flex flex-col p-12 md:px-16 items-start justify-start">
+            <nav className="w-full mb-14 flex justify-between items-center">
+              <h1 className="font-black text-lg md:text-4xl">Ray's Shadcn Practice</h1>
               <DarkModeToggle />
             </nav>
             { children }

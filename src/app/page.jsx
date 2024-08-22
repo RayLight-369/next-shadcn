@@ -18,7 +18,7 @@ const page = async () => {
 
   return (
     <main className="w-full">
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 justify-center md:justify-start">
         {
           topAiring?.results.map( anime => (
             <Card key={ anime.id } className={ "flex flex-col justify-between" }>
