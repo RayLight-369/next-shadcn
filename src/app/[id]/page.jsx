@@ -106,7 +106,7 @@ const page = async ( { params } ) => {
               <div className='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-2 py-5'>
                 {
                   animeInfo.episodes.map( ( episode, i ) => (
-                    <Link href={ `/${ animeInfo.title }/episodes/${ episode.id }` } className='rounded-md items-center p-3 px-4 bg-muted group flex justify-between text-sm'>
+                    <Link href={ `/${ animeInfo.title }/episodes/${ episode.id }` } className='rounded-md items-center p-3 px-4 bg-muted group transition-all hover:scale-105 hover:shadow-lg flex justify-between text-sm shadow-md shadow-slate-200'>
                       Episode { episode.number }
                       <ChevronRight className='invisible group-hover:visible h-full p-[2px] aspect-square hover:bg-background rounded-full' />
                     </Link>
