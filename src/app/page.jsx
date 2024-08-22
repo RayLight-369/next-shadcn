@@ -22,7 +22,7 @@ const page = async () => {
         {
           topAiring?.results.map( anime => (
             <Card key={ anime.id } className={ "relative flex flex-col max-w-full" }>
-              <CardHeader>
+              <CardHeader className="mb-20">
                 {/* <Image src={ anime.image } width={ 300 } height={ 150 } className="h-[300px] w-auto" /> */ }
                 <div>
                   <CardTitle className={ "overflow-hidden whitespace-nowrap text-ellipsis leading-normal" }>{ anime.title }</CardTitle>
@@ -32,9 +32,9 @@ const page = async () => {
                 </div>
               </CardHeader>
 
-              <CardContent className="mb-20">
+              {/* <CardContent className="mb-20">
                 <p className="text-sm text-slate-600 dark:text-slate-200">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, impedit laudantium porro quibusdam cumque iure maiores dolore nulla ex ea.</p>
-              </CardContent>
+              </CardContent> */}
 
               <CardFooter className="absolute bottom-0">
                 <Button>
