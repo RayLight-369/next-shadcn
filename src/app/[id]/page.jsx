@@ -37,9 +37,9 @@ const page = async ( { params } ) => {
       <div className="w-full flex flex-col md:flex-row gap-8">
         <div className="thumbnail w-full md:w-1/4">
           { animeInfo.image ? (
-            <Image src={ animeInfo.image } width={ 700 } height={ 300 } className='object-contain w-full bg-black rounded-3xl' />
+            <Image src={ animeInfo.image } width={ 700 } height={ 300 } loading='lazy' placeholder='empty' className='object-contain w-full bg-black rounded-3xl' />
           ) : (
-            <Skeleton className=" w-full aspect-square rounded-full" />
+            <Skeleton className="w-full h-[430px] rounded-3xl bg-muted" />
           ) }
         </div>
         <div className='flex flex-col flex-1 gap-7'>
