@@ -18,7 +18,6 @@ export default function RootLayout ( { children } ) {
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           <div className="!min-w-full flex flex-col p-12 px-16 items-start justify-start">
             <nav className="w-full mb-14 flex justify-between">
