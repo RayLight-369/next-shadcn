@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const page = async () => {
 
   return (
     <main className="w-full ">
-      <div className="flex flex-col md:grid md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 items-stretch md:justify-start">
+      <div className="relative flex flex-col md:grid md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 items-stretch md:justify-start">
         {
           topAiring?.results.map( anime => (
             <Card key={ anime.id } className={ "relative flex flex-col max-w-full" }>
@@ -47,7 +47,7 @@ const page = async () => {
 
               <CardFooter className="absolute bottom-0">
                 {/* <Button> */ }
-                <Link href={ `/${ anime.id }` } className={ buttonVariants( { variant: "default" } ) }>Go to Page</Link>
+                <Link href={ `/anime/${ anime.id }` } className={ buttonVariants( { variant: "default" } ) }>Go to Page</Link>
                 {/* </Button> */ }
               </CardFooter>
             </Card>

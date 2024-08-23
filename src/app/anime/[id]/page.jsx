@@ -61,7 +61,7 @@ const page = async ( { params } ) => {
                 <div className="genre flex gap-5 items-start">
                   <Label>Genre: </Label>
                   <div className='flex gap-2 w-full flex-wrap'>
-                    { animeInfo.genres.map( ( genre, i ) => (
+                    { animeInfo.genres?.map( ( genre, i ) => (
                       <Badge key={ i }>{ genre }</Badge>
                     ) ) }
                   </div>

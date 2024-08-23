@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { DarkModeProvider } from "@/components/DarkModeProvider";
+import Link from "next/link";
 
 const inter = Inter( { subsets: [ "latin" ] } );
 
@@ -39,7 +40,13 @@ export default async function RootLayout ( { children } ) {
           <div className="!min-w-full flex flex-col p-10 md:px-16 items-start justify-start">
             <nav className="w-full mb-14 flex justify-between items-center">
               <h1 className="font-black text-xl md:text-4xl">RayAnime: Enjoy</h1>
-              <DarkModeToggle />
+              <div className="flex gap-14 items-baseline">
+                <div className="flex gap-5 text-sm">
+                  <Link href="/" className="py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100">Shadcn</Link>
+                  <Link href="/movies" className="py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100">Aceternity</Link>
+                </div>
+                <DarkModeToggle />
+              </div>
             </nav>
             <div className="w-full max-w-full flex gap-8">
               { children }
