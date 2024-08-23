@@ -9,11 +9,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 
-async function fetchMovies ( input, page ) {
-  const res = await fetch( `https://yts.mx/api/v2/list_movies.json?query_term=${ input }${ page ? `&page=${ page }` : "" }` );
-  return ( await res.json() );
-}
-
 const page = () => {
 
   const [ movies, setMovies ] = useState( [] );
@@ -24,6 +19,11 @@ const page = () => {
   const inputValue = useDebounce( input, 500 );
 
   useEffect( () => {
+
+    async function fetchMovies ( input, page ) {
+      const res = await fetch( `https://yts.mx/api/v2/list_movies.json?query_term=${ input }${ page ? `&page=${ page }` : "" }` );
+      return ( await res.json() );
+    }
 
     ( async () => {
 
@@ -66,7 +66,7 @@ const page = () => {
                   description={ movie.summary }
                   header={ <img height={ 100 } className='w-full object-cover rounded-md h-2/3 flex-[.5]' src={ movie.large_cover_image } /> }
                   icon={ <IconMovie /> }
-                  className={ id % 3 == 0 ? "md:col-span-2 max-h-full border border-input" : "" }>
+                  className={ id % 3 == 0 ? "md:col-span-2 max-h-full border border-input overflow-hidden" : "" }>
 
                 </BentoGridItem>
               ) )
