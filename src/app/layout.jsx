@@ -3,6 +3,7 @@ import "./globals.css";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { DarkModeProvider } from "@/components/DarkModeProvider";
 import Link from "next/link";
+import CustomLink from "@/components/CustomLink";
 
 const inter = Inter( { subsets: [ "latin" ] } );
 
@@ -42,8 +43,8 @@ export default async function RootLayout ( { children } ) {
               <h1 className="font-black text-xl md:text-4xl">RayAnime: Enjoy</h1>
               <div className="flex gap-14 items-baseline">
                 <div className="flex gap-5 text-sm">
-                  <Link href="/" className="py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100">Shadcn</Link>
-                  <Link href="/movies" className="py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100">Aceternity</Link>
+                  <CustomLink key={ "/" } href="/" className={ `py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100` } active={ "before:!scale-100" }>Shadcn</CustomLink>
+                  <CustomLink key={ "/movies" } href="/movies" className={ `py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100` } active={ "before:!scale-100" }>Aceternity</CustomLink>
                 </div>
                 <DarkModeToggle />
               </div>
