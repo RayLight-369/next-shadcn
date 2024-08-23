@@ -50,7 +50,7 @@ export default async function RootLayout ( { children } ) {
           <div className="!min-w-full flex flex-col p-10 md:px-16 items-start justify-start">
             <nav className="w-full mb-14 flex justify-between items-center">
               <h1 className="font-black text-xl md:text-4xl">RayAnime: Enjoy</h1>
-              <div className="flex gap-14 items-center md:items-baseline">
+              <div className="flex gap-8 md:gap-14 items-center md:items-baseline">
                 <div className="gap-5 text-sm hidden md:flex">
                   <CustomLink key={ "/" } href="/" className={ `py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100` } active={ "before:!scale-100" }>Shadcn</CustomLink>
                   <CustomLink key={ "/movies" } href="/movies" className={ `py-1 px-3 relative before:transition-all before:origin-left before:duration-300 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-muted before:-z-10 before:scale-x-0 before:hover:scale-x-100` } active={ "before:!scale-100" }>Aceternity</CustomLink>
